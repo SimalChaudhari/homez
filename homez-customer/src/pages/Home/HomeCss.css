@@ -1,0 +1,15 @@
+.home2-hero-banner {
+  background-image: url("../../assets/images/HeroBg.jpg");
+  background-position: center center; /* Center the background */
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensure the image covers the container */
+  height: 650px;
+  width: 100%;
+  max-width: 1600px;
+  position: absolute;
+  top: 143px; /* Position at the top */
+  left: 50%; /* Move it to the center horizontally */
+  transform: translateX(-50%); /* Adjust for perfect centering */
+  z-index: 1; /* Ensure it's behind other content */
+  border-radius: 12px; /* Border-radius as per your requirement */
+}

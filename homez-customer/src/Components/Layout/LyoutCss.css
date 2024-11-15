@@ -1,0 +1,42 @@
+
+.ud-btn {
+    border-radius: 30px;
+    /* display: inline-block; */
+    font-weight: 600;
+    font-size: 15px;
+    font-style: normal;
+    letter-spacing: 0;
+    padding: 13px 30px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    z-index: 0;
+    transition: all .4s ease;
+    border: 1px solid;
+}
+
+.btn-thm {
+    background-color: #eb6753;
+    border: 1px solid #eb6753;
+    color: #ffffff
+}
+
+.btn-dark:before,.btn-gray:before,.btn-light-gray:before,.btn-thm-border:before,.btn-thm2:before,.btn-thm3:before,.btn-thm:before,.btn-transparent2:before,.btn-transparent:before,.btn-white:before,.ud-btn:before {
+    background-color: #ee4c34;
+    content: "";
+    height: 100%;
+    left: -100%;
+    position: absolute;
+    top: 0;
+    width: 0;
+    z-index: -1;
+    transform: skew(50deg);
+    transition: width .6s;
+    transform-origin: top left
+}
+
+
+.btn-dark:hover:before,.btn-gray:hover:before,.btn-light-gray:hover:before,.btn-thm-border:hover:before,.btn-thm2:hover:before,.btn-thm3:hover:before,.btn-thm:hover:before,.btn-transparent2:hover:before,.btn-transparent:hover:before,.btn-white:hover:before,.ud-btn:hover:before {
+    height: 100%;
+    width: 200%
+}

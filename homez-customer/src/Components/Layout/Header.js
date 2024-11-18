@@ -37,7 +37,8 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 w-full z-20 font-semibold transition-all duration-300 ease-in-out shadow-lg ${scrolled ? 'bg-white text-custome-black' : 'bg-custome-black text-white'}`}>
       <div className="max-w-screen-customWidth xl:max-w-customContainer lg:max-w-customContainer md:max-w-[960px] sm:max-w-[720px] mx-auto flex items-center justify-between py-4 px-4">
-        <div className="flex items-center space-x-4">
+
+        <div className="flex items-center space-x-4 justify-center">
           <Link to="/" className="text-2xl font-bold">
             <img src={scrolled ? DarkLogo : Logo} alt="Logo" />
           </Link>

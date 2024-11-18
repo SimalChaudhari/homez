@@ -13,3 +13,102 @@
   z-index: 1; /* Ensure it's behind other content */
   border-radius: 12px; /* Border-radius as per your requirement */
 }
+
+
+.help-btn {
+  border-radius: 10px;
+  /* display: inline-block; */
+  font-weight: 600;
+  font-size: 15px;
+  font-style: normal;
+  letter-spacing: 0;
+  padding: 13px 30px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  z-index: 0;
+  transition: all .4s ease;
+  border: 1px solid #eb6753;
+  color: #eb6753
+}
+
+.btn-thm {
+  background-color: #eb6753;
+  border: 1px solid #eb6753;
+  color: #ffffff
+}
+
+.btn-thm-border:before,.btn-thm2:before,.btn-thm:before,.help-btn:before {
+  background-color: #ee4c34;
+  content: "";
+  height: 100%;
+  left: -100%;
+  position: absolute;
+  top: 0;
+  width: 0;
+  z-index: -1;
+  transform: skew(50deg);
+  transition: width .6s;
+  transform-origin: top left;
+  color: #ffffff
+}
+
+
+.btn-thm-border:hover:before,.btn-thm:hover:before,.help-btn:hover:before {
+  height: 100%;
+  width: 200%
+}
+
+.help-btn:hover{
+  color: #fff;
+}
+
+
+.Dream-btn {
+  border-radius: 10px;
+  /* display: inline-block; */
+  font-weight: 600;
+  font-size: 15px;
+  font-style: normal;
+  letter-spacing: 0;
+  padding: 15px 40px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  z-index: 0;
+  transition: all .4s ease;
+  border: 1px solid #eb6753;
+  color: #ffffff;
+  background-color: #eb6753;
+}
+
+.btn-thm {
+  background-color: #eb6753;
+  border: 1px solid #eb6753;
+  color: #ffffff
+}
+
+.btn-thm-border:before,.btn-thm2:before,.btn-thm:before,.Dream-btn:before {
+  background-color: #ee4c34;
+  content: "";
+  height: 100%;
+  left: -100%;
+  position: absolute;
+  top: 0;
+  width: 0;
+  z-index: -1;
+  transform: skew(50deg);
+  transition: width .6s;
+  transform-origin: top left;
+  color: #ffffff
+}
+
+
+.btn-thm-border:hover:before,.btn-thm:hover:before,.Dream-btn:hover:before {
+  height: 100%;
+  width: 200%
+}
+
+.Dream-btn:hover{
+  color: #fff;
+}

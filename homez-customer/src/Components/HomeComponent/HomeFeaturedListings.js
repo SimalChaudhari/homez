@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import { ImArrowUpRight2 } from 'react-icons/im';
-import { FaBed, FaBath } from 'react-icons/fa';
-import { BiRuler } from 'react-icons/bi';
+import { LiaBedSolid } from "react-icons/lia";
+import { LuExternalLink, LuHeart } from "react-icons/lu";
+import { PiShower } from 'react-icons/pi';
+import { TbCopyPlus } from "react-icons/tb";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import G1 from '../../assets/images/g1.jpg';
 import G2 from '../../assets/images/g2.jpg';
 import G3 from '../../assets/images/g3.jpg';
 import G4 from '../../assets/images/g4.jpg';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 // Example data for featured properties
 const propertyData = [
@@ -55,9 +58,21 @@ const propertyData = [
 ];
 
 function HomeFeaturedListings() {
+  const sliderRef = useRef(null);
+
+  // Function to move to the previous slide
+  const handlePrev = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  // Function to move to the next slide
+  const handleNext = () => {
+    sliderRef.current.slickNext();
+  };
+
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -78,54 +93,82 @@ function HomeFeaturedListings() {
   };
 
   return (
-    <div className='bg-white py-8'>
-      <div className='lg:max-w-customContainer2 md:max-w-[960px] sm:max-w-[720px] mx-auto px-4'>
-
+    <div className="bg-white py-8 overflow-hidden">
+      <div className="lg:max-w-customContainer2 md:max-w-[960px] sm:max-w-[720px] mx-auto px-4 relative">
+        
         {/* Header */}
-        <div className='flex items-center justify-between mb-6'>
+        <div className="lg:flex items-center justify-between mb-6">
           <div>
-            <h3 className='font-semibold text-3xl'>Discover Our Featured Listings</h3>
-            <p className='text-sm'>Aliquam lacinia diam quis lacus euismod</p>
+            <h3 className="font-semibold lg:text-3xl text-2xl">Discover Our Featured Listings</h3>
+            <p className="text-sm">Aliquam lacinia diam quis lacus euismod</p>
           </div>
-          <div className='flex items-center text-custome-black hover:text-custome-red cursor-pointer'>
-            <p className='font-medium'>See All Properties</p>
-            <ImArrowUpRight2 className="text-lg ml-2 mb-2" />
+          <div className="flex items-center text-custome-black hover:text-custome-red cursor-pointer lg:mt-0 mt-9">
+            <p className="font-medium">See All Properties</p>
+            <ImArrowUpRight2 className="text-lg" />
           </div>
         </div>
 
         {/* Featured Carousel */}
-        <Slider {...settings}>
-          {propertyData.map((property, index) => (
-            <div key={index} className='p-4 featuredcard'>
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                
-                {/* Image Section */}
-                <div className="relative">
-                  <img src={property.image} alt={property.title} className="w-full h-56 object-cover" />
-                  {property.featured && (
-                    <div className="absolute top-4 left-4 bg-red-500 text-white text-xs font-semibold px-3 py-0 rounded">
-                      FEATURED
-                    </div>
-                  )}
-                  <div className="absolute bottom-4 left-4 bg-white text-gray-800 font-semibold px-3 py-1 rounded">
-                    {property.price}
-                  </div>
-                </div>
+        <div className=" overflow-hidden">
+          {/* Left Arrow */}
+          <button
+            className="arrow-left"
+            onClick={handlePrev}
+          >
+            <IoIosArrowBack size={20} />
+          </button>
 
-                {/* Details Section */}
-                <div className="p-4">
-                  <h4 className="font-semibold text-lg mb-1">{property.title}</h4>
-                  <p className="text-sm text-gray-500">{property.location}</p>
-                  <div className="flex items-center text-gray-600 text-sm mt-2 space-x-4">
-                    <span className="flex items-center"><FaBed className="mr-1" />{property.beds}</span>
-                    <span className="flex items-center"><FaBath className="mr-1" />{property.baths}</span>
-                    <span className="flex items-center"><BiRuler className="mr-1" />{property.area}</span>
+          {/* Carousel */}
+          <Slider {...settings} ref={sliderRef}>
+            {propertyData.map((property, index) => (
+              <div key={index} className="p-4">
+                <div className="bg-white rounded-lg overflow-hidden">
+                  
+                  {/* Image Section */}
+                  <div className="relative">
+                    <img src={property.image} alt={property.title} className="w-full h-56 object-cover" />
+                    {property.featured && (
+                      <div className="absolute top-4 left-4 bg-red-500 text-white text-xs font-semibold px-3 py-0 rounded">
+                        FEATURED
+                      </div>
+                    )}
+                    <div className="absolute bottom-4 left-4 bg-white text-gray-800 font-semibold px-3 py-1 rounded">
+                      {property.price}
+                    </div>
+                  </div>
+
+                  {/* Details Section */}
+                  <div className="p-4 mt-5 space-y-2">
+                    <h4 className="font-semibold text-base mb-1">{property.title}</h4>
+                    <p className="text-sm text-gray-500">{property.location}</p>
+                    <div className="flex items-center text-gray-600 text-sm my-2 space-x-4">
+                      <span className="flex items-center"><LiaBedSolid className="mr-1" />{property.beds}</span>
+                      <span className="flex items-center"><PiShower className="mr-1" />{property.baths}</span>
+                      <span className="flex items-center"><LuExternalLink className="mr-1" />{property.area}</span>
+                    </div>
+                    <hr />
+                    <div className="flex items-center justify-between text-custome-black text-sm my-2 space-x-4">
+                      <div><p>For Rent</p></div>
+                      <div className="flex items-center space-x-4">
+                        <span className="flex items-center"><LuExternalLink className="mr-1" /></span>
+                        <span className="flex items-center"><TbCopyPlus className="mr-1" /></span>
+                        <span className="flex items-center"><LuHeart className="mr-1" /></span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+
+          {/* Right Arrow */}
+          <button
+            className="arrow-right"
+            onClick={handleNext}
+          >
+            <IoIosArrowForward size={20} />
+          </button>
+        </div>
       </div>
     </div>
   );

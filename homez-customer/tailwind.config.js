@@ -20,7 +20,8 @@ module.exports = {
         'custome-black': '#181a20',
         'custome-hover-black': '#333',
         'custome-hover-back': '#f3f3f3',
-        'custome-hover-red': 'hsla(8, 79%, 62%, 0.07)',
+        // 'custome-hover-red': 'hsla(8, 79%, 62%, 0.07)',
+        'custome-hover-red': 'hsla(8, 79%, 62%, 0.05)',
       },
       // Custom z-index values from 1 to 20
       zIndex: {
@@ -53,6 +54,16 @@ module.exports = {
         'sm': '576px',    // Equivalent to the "min-width: 576px" media query
         'xxl': '1400px',  // Custom breakpoint for "min-width: 1400px"
         'customWidth': '1600px' // Custom breakpoint for "min-width: 1600px"
+      },
+      animation: {
+        'spin-slow': 'spin 10s linear infinite', // Custom animation
+        'move-up-down': 'moveUpDown 5s ease-in-out infinite',
+      },
+      keyframes: {
+        moveUpDown: {
+          '0%, 100%': { transform: 'translateY(0px)' }, // Start and end positions
+          '50%': { transform: 'translateY(-20px)' }, // Move up by 10px
+        },
       },
     },
   },

@@ -59,7 +59,7 @@ function HomeSlider() {
     return (
         <div className="px-4">
             <div className="lg:max-w-customContainer2 md:max-w-[960px] sm:max-w-[720px] mx-auto ">
-                <Slider ref={sliderRef} {...settings}>
+                <Slider ref={sliderRef} {...settings} className='py-5'>
                     {propertyData.map((property, index) => (
                         <div key={index} className="hoverCss bg-white text-custome-black rounded-lg p-4 shadow-md transform transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-custome-red hover:text-white text-center ">
                             <div className="flex justify-start ml-4">

@@ -75,7 +75,7 @@ function HomeRelativeComponent() {
                             </div>
 
                             {/* Search Button */}
-                            <button className="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2 font-medium  w-auto">
+                            <button className="bg-green-500 hover:bg-green-600 text-white rounded-full px-4 py-2 font-medium  w-auto">
                                 Search
                             </button>
                         </div>

@@ -9,7 +9,7 @@ export { default as HomeHeroComponent } from "./HomeComponent/HomeHeroComponent"
 export { default as HomeRelativeComponent } from "./HomeComponent/HomeRelativeComponent";
 export { default as HomeSlider } from "./HomeComponent/HomeSlider";
 export { default as HomeFeaturedListings } from "./HomeComponent/HomeFeaturedListings";
+export { default as ExploreCities } from "./HomeComponent/ExploreCities";
+export { default as RealtonHelp } from "./HomeComponent/RealtonHelp";
+export { default as DreamHome } from "./HomeComponent/DreamHome";
 
-
-// Silder
-export { default as CustomSlider } from "./CustomSlider/CustomSlider";

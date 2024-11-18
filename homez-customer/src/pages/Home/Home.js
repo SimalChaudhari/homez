@@ -1,6 +1,7 @@
 import React from "react";
-import { HomeFeaturedListings, HomeHeroComponent } from "../../Components";
+import { DreamHome, ExploreCities, HomeFeaturedListings, HomeHeroComponent, RealtonHelp } from "../../Components";
 import "./HomeCss.css"
+import "./CustomSliderCss.css"
 
 const Home = () => {
   return (
@@ -9,6 +10,12 @@ const Home = () => {
       <HomeHeroComponent />
 
       <HomeFeaturedListings />
+
+      <ExploreCities />
+
+      <RealtonHelp />
+
+      <DreamHome />
 
     </div>
   );

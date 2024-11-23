@@ -1,6 +1,9 @@
 .slick-slider{
   overflow: hidden;
 }
+.slick-slide{
+  width: 5%;
+}
 /* Custom styles for slider arrows */
 .custom-arrow {
   position: absolute;
@@ -32,12 +35,6 @@
 .slick-dots li.slick-active button:before {
   color: #dbb466; /* Active dot color */
 }
-
-/* Adjust the slider track */
-.slick-track div {
-  padding: 0 4px;
-}
-
 
 /* Custom arrows styling */
 
@@ -91,18 +88,11 @@
   }
 
   
-  .slick-track div {
-    padding: 4px;
-  }
-
   .slick-track .hoverCss {
     /* padding: 22px 4px; */
     padding: 44px 20px;
   }
 
-.slick-track .featuredcard {
-    /* padding: 22px 4px; */
-}
 
   .icon_bg{
     background-color: hsla(8, 79%, 62%, 0.07);

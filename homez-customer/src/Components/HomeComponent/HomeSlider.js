@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -29,7 +29,6 @@ function HomeSlider() {
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        // pauseOnHover: true,
         arrows: false,
         responsive: [
             {
@@ -56,6 +55,16 @@ function HomeSlider() {
         ],
     };
 
+    // Apply padding when hoverCss exists in the slider
+    useEffect(() => {
+        const sliderDivs = document.querySelectorAll('.slick-track div');
+        sliderDivs.forEach(div => {
+            if (div.querySelector('.hoverCss')) {
+                div.style.padding = '4px';
+            }
+        });
+    }, []);
+
     return (
         <div className="px-4">
             <div className="lg:max-w-customContainer2 md:max-w-[960px] sm:max-w-[720px] mx-auto ">
@@ -69,8 +78,8 @@ function HomeSlider() {
                                 </div>
                             </div>
                             <div className='text-left ml-4 space-y-3'>
-                            <h3 className="font-semibold text-sm mb-1">{property.title}</h3>
-                            <p className="text-sm">{property.properties}</p>
+                                <h3 className="font-semibold text-sm mb-1">{property.title}</h3>
+                                <p className="text-sm">{property.properties}</p>
                             </div>
                         </div>
                     ))}

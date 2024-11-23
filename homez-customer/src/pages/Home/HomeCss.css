@@ -88,7 +88,7 @@
   color: #ffffff
 }
 
-.btn-thm-border:before,.btn-thm2:before,.btn-thm:before,.Dream-btn:before {
+.btn-thm-border:before,.btn-thm2:before,.btn-thm:before,.Dream-btn:before,.Footer-btn:before {
   background-color: #ee4c34;
   content: "";
   height: 100%;
@@ -104,11 +104,59 @@
 }
 
 
-.btn-thm-border:hover:before,.btn-thm:hover:before,.Dream-btn:hover:before {
+.btn-thm-border:hover:before,.btn-thm:hover:before,.Dream-btn:hover:before,.Footer-btn:hover:before {
   height: 100%;
   width: 200%
 }
 
 .Dream-btn:hover{
   color: #fff;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+.nav {
+  display: flex
+;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-pills ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
+.nav-link {
+  display: block;
+  padding: .5rem 1rem;
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.testi-text {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 45px;
+  margin-bottom: 30px;
+}
+
+.design {
+  font-weight: 400;
+  font-size: 13px;
+}
+.h6{
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
 }

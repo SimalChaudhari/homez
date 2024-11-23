@@ -7,6 +7,7 @@ import { PiShower } from 'react-icons/pi';
 import { LuExternalLink } from "react-icons/lu";
 import { MdPlayCircle } from "react-icons/md";
 import { ImArrowUpRight2 } from 'react-icons/im';
+import CountUp from 'react-countup'; // Import the library
 
 function DreamHome() {
     return (
@@ -50,7 +51,7 @@ function DreamHome() {
 
                             </div>
                             <a
-                                href="#"
+                                href="/house-details"
                                 className="font-medium flex items-center space-x-1 text-sm my-5"
                             >
                                 <span>View House</span>
@@ -68,23 +69,42 @@ function DreamHome() {
                             </div>
 
                             <div className='space-y-1'>
-                                <h2 className='lg:text-5xl text-2xl font-semibold'>400</h2>
+                                <h2 className='lg:text-5xl text-2xl font-semibold'>
+                                    <CountUp start={0} end={400} duration={3} />
+                                </h2>
                                 <p className='text-sm'>Stores around the world</p>
                             </div>
 
                             <div className='space-y-1'>
-                                <h2 className='lg:text-5xl text-2xl font-semibold'>200+</h2>
+                                <h2 className='lg:text-5xl text-2xl font-semibold'>
+                                    <CountUp start={0} end={200} duration={3} />+
+                                </h2>
                                 <p className='text-sm'>Stores around the world</p>
                             </div>
 
                             <div className='space-y-1'>
-                                <h2 className='lg:text-5xl text-2xl font-semibold'>1k+</h2>
+                                <h2 className='lg:text-5xl text-2xl font-semibold'>
+                                    <CountUp
+                                        start={0}
+                                        end={1000}
+                                        duration={3}
+                                        suffix="+"
+                                        formattingFn={(value) => {
+                                            // Format numbers above 1000 to '1k'
+                                            if (value >= 1000) {
+                                                return `${(value / 1000).toFixed(0)}k`; // Fixed to show '1k' without decimals
+                                            }
+                                            return value; // Return value as is for numbers below 1000
+                                        }}
+                                    />+
+
+                                </h2>
                                 <p className='text-sm'>Stores around the world</p>
                             </div>
 
                             <div className=''>
                                 <a
-                                    href="#"
+                                    href="/house-details"
                                     className="inline-flex items-center justify-center Dream-btn"
                                 >
                                     See More

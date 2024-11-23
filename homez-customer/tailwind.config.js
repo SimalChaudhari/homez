@@ -14,6 +14,9 @@ module.exports = {
       },
       colors: {
         'custome-white': '#F8F9FA',
+        'custome-white-back': '#f7f7f7',
+        'custome-footer-color': '#bebdbd',
+        'custome-button-color': 'hsl(0deg 0% 100% / 0.4%)',
         'custome-yellow': '#DBB466',
         'custome-yellow-secondery': '#BB9B6A',
         'custome-red': '#eb6753',

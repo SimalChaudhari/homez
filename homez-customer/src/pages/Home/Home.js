@@ -1,5 +1,5 @@
 import React from "react";
-import { DreamHome, ExploreCities, HomeFeaturedListings, HomeHeroComponent, RealtonHelp } from "../../Components";
+import { DreamHome, ExploreCities, HomeAgetns, HomeFeaturedListings, HomeHeroComponent, HomeTrusted, RealtonHelp, TestimonialsHome } from "../../Components";
 import "./HomeCss.css"
 import "./CustomSliderCss.css"
 
@@ -16,6 +16,12 @@ const Home = () => {
       <RealtonHelp />
 
       <DreamHome />
+
+      <TestimonialsHome />
+
+      <HomeAgetns />
+
+      <HomeTrusted />
 
     </div>
   );

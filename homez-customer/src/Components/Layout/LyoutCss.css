@@ -40,3 +40,94 @@
     height: 100%;
     width: 200%
 }
+
+.info-title {
+    margin-bottom: 5px;
+    line-height: 1.85;
+    font-weight: 400;
+}
+.info-phone {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.app-info {
+    background-color: hsla(0, 0%, 100%, .04);
+    border-radius: 12px;
+    /* padding: 10px 20px 2px; */
+    width: 210px;
+    transition: all .4s ease;
+}
+
+.input-info {
+    background-color: hsla(0, 0%, 100%, .04);
+    border-radius: 12px;
+    /* padding: 10px 20px 2px; */
+    /* width: 210px; */
+    transition: all .4s ease;
+}
+
+
+
+.Footer-btn {
+    border-radius: 10px;
+    /* display: inline-block; */
+    font-weight: 600;
+    font-size: 15px;
+    font-style: normal;
+    letter-spacing: 0;
+    padding: 15px 40px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    z-index: 0;
+    transition: all .4s ease;
+    /* border: 1px solid #ee4c34; */
+    color: #ffffff;
+    background-color: #181a20;
+  }
+  
+  .Footer-btn:hover{
+    color: #fff;
+  }
+
+  
+.Footer-btn:before {
+    background-color: #ee4c34;
+    content: "";
+    height: 100%;
+    left: -100%;
+    position: absolute;
+    top: 0;
+    width: 0;
+    z-index: -1;
+    transform: skew(50deg);
+    transition: width .6s;
+    transform-origin: top left;
+    color: #ffffff
+  }
+  
+  
+ .Footer-btn:hover:before {
+    height: 100%;
+    width: 200%
+  }
+  
+  
+ .erro_code {
+    font-weight: 600;
+    /* line-height: 289px;   */
+    font-size: 200px;
+}
+
+  @media only screen and (max-width: 600px) {
+    .Footer-btn {
+        padding: 15px 20px;
+    }
+    
+ .erro_code {
+    font-size: 150px;
+}
+
+  }

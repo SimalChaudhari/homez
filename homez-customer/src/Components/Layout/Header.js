@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes, FaSearch, FaBook, FaRegUserCircle, FaAngleDown } from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { IoCallOutline, IoCloseOutline } from "react-icons/io5";
 import Logo from '../../assets/images/header_logo.svg';
@@ -12,7 +12,7 @@ import { ImArrowUpRight2 } from "react-icons/im";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
-  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  // const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);  // Track scroll state
 
   // Scroll event listener to track scroll position
@@ -32,7 +32,7 @@ const Header = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleProductsDropdown = () => setIsProductsOpen(!isProductsOpen);
-  const toggleCategoryDropdown = () => setIsCategoryOpen(!isCategoryOpen);
+  // const toggleCategoryDropdown = () => setIsCategoryOpen(!isCategoryOpen);
 
   return (
     <header className={`fixed top-0 left-0 w-full z-20 font-semibold transition-all duration-300 ease-in-out shadow-lg ${scrolled ? 'bg-white text-custome-black' : 'bg-custome-black text-white'}`}>
@@ -52,7 +52,7 @@ const Header = () => {
                   <li className="relative group">
                     <button
                       id="dropdownNavbarLink"
-                      className="flex items-center justify-between w-full py-2 px-4 rounded-full transition-all duration-300 ease-in-out hover:text-custome-red hover:bg-custome-hover-black"
+                      className={`flex items-center justify-between w-full py-2 px-4 rounded-full transition-all duration-300 ease-in-out ${scrolled ? 'hover:text-custome-red hover:bg-custome-white-back' : 'hover:text-custome-red hover:bg-custome-hover-black'}`}
                     >
                       Home
                       <IoIosArrowDown className="text-lg transition-transform duration-300 ease-in-out" />
@@ -65,34 +65,34 @@ const Header = () => {
                     >
                       <ul className="py-2 text-custome-black font-medium" aria-labelledby="dropdownLargeButton">
                         <li>
-                          <a href="#" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v1</a>
+                          <a href="/home" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v1</a>
                         </li>
                         <li>
-                          <a href="#" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v2</a>
+                          <a href="/home" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v2</a>
                         </li>
                         <li>
-                          <a href="#" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v3</a>
+                          <a href="/home" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v3</a>
                         </li>
                         <li>
-                          <a href="#" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v4</a>
+                          <a href="/home" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v4</a>
                         </li>
                         <li>
-                          <a href="#" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v5</a>
+                          <a href="/home" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v5</a>
                         </li>
                         <li>
-                          <a href="#" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v6</a>
+                          <a href="/home" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v6</a>
                         </li>
                         <li>
-                          <a href="#" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v7</a>
+                          <a href="/home" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v7</a>
                         </li>
                         <li>
-                          <a href="#" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v8</a>
+                          <a href="/home" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v8</a>
                         </li>
                         <li>
-                          <a href="#" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v9</a>
+                          <a href="/home" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v9</a>
                         </li>
                         <li>
-                          <a href="#" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v10</a>
+                          <a href="/home" className="block px-4 py-2 dark:hover:bg-custome-hover-red">Home v10</a>
                         </li>
                       </ul>
                     </div>
@@ -101,11 +101,13 @@ const Header = () => {
                   </li>
 
                   <li>
-                    <a href="#" className="block py-2 px-4 rounded-full transition-all duration-300 ease-in-out hover:text-custome-red hover:bg-custome-hover-black">Blog</a>
+                    <a href="/home" 
+                    className={`flex items-center justify-between w-full py-2 px-4 rounded-full transition-all duration-300 ease-in-out ${scrolled ? 'hover:text-custome-red hover:bg-custome-white-back' : 'hover:text-custome-red hover:bg-custome-hover-black'}`}>Blog</a>
                   </li>
 
                   <li>
-                    <a href="#" className="block py-2 px-4 rounded-full transition-all duration-300 ease-in-out hover:text-custome-red hover:bg-custome-hover-black">Contact Us</a>
+                    <a href="/home" 
+                    className={`flex items-center justify-between w-full py-2 px-4 rounded-full transition-all duration-300 ease-in-out ${scrolled ? 'hover:text-custome-red hover:bg-custome-white-back' : 'hover:text-custome-red hover:bg-custome-hover-black'}`}>Contact Us</a>
                   </li>
                 </ul>
               </div>
